@@ -53,6 +53,30 @@ sudo apt-get install eclipse
 echo 'Installing LAMP Server ...'
 sudo apt-get install lamp-server^
 
-echo 'Manual firebug install ...'
-firefox http://getfirebug.com/
 
+echo 'Manually install firefox addons:
+    + firebug
+    + RESTClient
+    + easyXDebug
+    + flash :P
+    + etc.
+Manually configure firefox preferences:
+    + home page
+    + downloads
+    + history
+    + passwords
+    + mailto
+    + etc'
+firefox -preferences about:addons
+
+
+echo 'Installing Google Chrome ...'
+cd ~
+mkdir tmp
+cd tmp
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+
+
+echo 'Manually configure Google Chrome ...'
+google-chrome chrome://chrome/settings/
