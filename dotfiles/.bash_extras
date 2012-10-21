@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# composer
+alias composer='php composer.phar'
+alias composerinit='curl -s http://getcomposer.org/installer | php;
+composer init; echo composer.phar >> .gitignore'
+alias composerdump='composer dumpautoload --optimize'
+
+

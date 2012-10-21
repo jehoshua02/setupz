@@ -1,0 +1,55 @@
+#!/bin/bash
+
+cd ~
+mkdir mine
+cd mine
+
+
+echo 'Updates ...'
+sudo apt-get update
+
+
+echo 'Installing git ...'
+sudo apt-get install git
+
+
+echo 'Cloning setupz ...'
+cd ~/mine
+git clone https://github.com/jehoshua02/setupz.git
+
+
+cd ~
+echo 'Symlink .gitconfig'
+ln -s ~/mine/setupz/dotfiles/.gitconfig
+echo 'Symlink .gitignore'
+ln -s ~/mine/setupz/dotfiles/.gitignore
+echo 'Symlink .vimrc'
+ln -s ~/mine/setupz/dotfiles/.vimrc
+
+
+echo 'Include .bash_extras in .bashrc'
+echo -e "
+# bash extras
+if [ -f ~/mine/setupz/dotfiles/.bash_extras ]; then
+    . ~/mine/setupz/dotfiles/.bash_extras
+fi
+" >> ~/.bashrc
+
+
+echo 'Installing git html help (/usr/share/doc/git/html) ...'
+sudo mkdir -p /usr/share/doc/git
+cd /usr/share/doc/git
+sudo git clone git://git.kernel.org/pub/scm/git/git-htmldocs.git html
+
+
+echo 'Installing vim ...'
+sudo apt-get install vim
+
+
+echo 'Installing Eclipse IDE ...'
+sudo apt-get install eclipse
+
+
+echo 'Installing LAMP Server ...'
+sudo apt-get install lamp-server^
+

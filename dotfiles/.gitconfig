@@ -1,0 +1,10 @@
+[user]
+	name = Joshua Stoutenburg
+	email = jehoshua02@gmail.com
+[help]
+	format = html
+[color]
+	ui = always
+[core]
+	editor = vim
+	excludesfile = ~/mine/setupz/dotfiles/.gitignore
