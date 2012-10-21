@@ -53,3 +53,6 @@ sudo apt-get install eclipse
 echo 'Installing LAMP Server ...'
 sudo apt-get install lamp-server^
 
+echo 'Manual firebug install ...'
+firefox http://getfirebug.com/
+
