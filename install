@@ -54,6 +54,18 @@ echo 'Installing LAMP Server ...'
 sudo apt-get install lamp-server^
 
 
+echo 'Installing XDebug ...'
+sudo apt-get install php5-xdebug
+echo "
+xdebug.remote_enable=On
+xdebug.remote_autostart=On
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.collect_params = 4
+" | sudo tee -a /etc/php5/conf.d/xdebug.ini
+
+
 echo 'Manually install firefox addons:
     + firebug
     + RESTClient
