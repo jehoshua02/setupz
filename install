@@ -46,6 +46,16 @@ echo 'Installing vim ...'
 sudo apt-get install vim
 
 
+echo 'Installing curl ...'
+sudo apt-get install curl
+
+
+echo 'Installing composer ...'
+cd ~/tmp
+curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+
 echo 'Installing Eclipse IDE ...'
 sudo apt-get install eclipse
 
@@ -58,7 +68,6 @@ echo 'Installing XDebug ...'
 sudo apt-get install php5-xdebug
 echo "
 xdebug.remote_enable=On
-xdebug.remote_autostart=On
 xdebug.remote_handler=dbgp
 xdebug.remote_host=localhost
 xdebug.remote_port=9000
