@@ -1,8 +1,8 @@
 #!/bin/bash
 
+echo 'Making mine and tmp directories ...'
 cd ~
-mkdir mine
-cd mine
+mkdir tmp mine
 
 
 echo 'Updates ...'
@@ -83,9 +83,7 @@ firefox -preferences about:addons
 
 
 echo 'Installing Google Chrome ...'
-cd ~
-mkdir tmp
-cd tmp
+cd ~/tmp
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 
