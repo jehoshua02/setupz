@@ -16,4 +16,5 @@ alias xdebug='export XDEBUG_CONFIG=""'
 alias noxdebug='unset XDEBUG_CONFIG'
 
 # phpunit - assumes composer installed, project root, tests directory
-alias test='vendor/bin/phpunit --bootstrap tests/bootstrap.php tests'
+alias test='vendor/bin/phpunit --colors --bootstrap tests/bootstrap.php tests'
+
