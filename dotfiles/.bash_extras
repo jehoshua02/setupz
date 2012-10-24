@@ -14,3 +14,6 @@ alias composerdump='composer dumpautoload --optimize'
 # debug php scripts
 alias xdebug='export XDEBUG_CONFIG=""'
 alias noxdebug='unset XDEBUG_CONFIG'
+
+# phpunit - assumes composer installed, project root, tests directory
+alias test='vendor/bin/phpunit --bootstrap tests/bootstrap.php tests'
