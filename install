@@ -112,3 +112,6 @@ echo 'Manually configure compiz settings manager:
     + negative display
     + etc'
 ccsm
+
+echo 'Installing MySQL Workbench ...'
+sudo apt-get install mysql-workbench
