@@ -99,3 +99,16 @@ sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 echo 'Manually configure Google Chrome ...'
 google-chrome chrome://chrome/settings/
+
+echo 'Installing compiz config settings manager ...'
+sudo apt-get install compizconfig-settings-manager
+
+echo 'Manually configure compiz settings manager:
+    + workspaces
+    + window resizing
+    + resize info
+    + launcher icon size
+    + wobbly windows
+    + negative display
+    + etc'
+ccsm
