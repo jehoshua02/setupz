@@ -46,20 +46,6 @@ echo 'Installing vim ...'
 sudo apt-get install vim
 
 
-echo 'Installing curl ...'
-sudo apt-get install curl
-
-
-echo 'Installing composer ...'
-cd ~/tmp
-curl -s https://getcomposer.org/installer | php
-sudo mv composer.phar /usr/local/bin/composer
-
-
-echo 'Installing Eclipse IDE ...'
-sudo apt-get install eclipse
-
-
 echo 'Installing LAMP Server ...'
 sudo apt-get install lamp-server^
 
@@ -73,6 +59,20 @@ xdebug.remote_host=localhost
 xdebug.remote_port=9000
 xdebug.collect_params = 4
 " | sudo tee -a /etc/php5/conf.d/xdebug.ini
+
+
+echo 'Installing curl ...'
+sudo apt-get install curl
+
+
+echo 'Installing composer ...'
+cd ~/tmp
+curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
+
+echo 'Installing Eclipse IDE ...'
+sudo apt-get install eclipse
 
 
 echo 'Manually install firefox addons:

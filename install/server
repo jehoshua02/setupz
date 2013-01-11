@@ -1,0 +1,66 @@
+#!/bin/bash
+
+echo 'Making mine and tmp directories ...'
+cd ~
+mkdir tmp mine
+
+
+echo 'Updates ...'
+sudo apt-get update
+
+
+echo 'Installing git ...'
+sudo apt-get install git
+
+
+echo 'Cloning setupz ...'
+cd ~/mine
+git clone https://github.com/jehoshua02/setupz.git
+
+
+cd ~
+echo 'Symlink .gitconfig'
+ln -s ~/mine/setupz/dotfiles/.gitconfig
+echo 'Symlink .gitignore'
+ln -s ~/mine/setupz/dotfiles/.gitignore
+echo 'Symlink .vimrc'
+ln -s ~/mine/setupz/dotfiles/.vimrc
+
+
+echo 'Include .bash_extras in .bashrc'
+echo -e "
+# bash extras
+if [ -f ~/mine/setupz/dotfiles/.bash_extras ]; then
+    . ~/mine/setupz/dotfiles/.bash_extras
+fi
+" >> ~/.bashrc
+
+
+echo 'Installing vim ...'
+sudo apt-get install vim
+
+
+echo 'Installing LAMP Server ...'
+sudo apt-get install lamp-server^
+
+
+echo 'Installing XDebug ...'
+sudo apt-get install php5-xdebug
+echo "
+xdebug.remote_enable=On
+xdebug.remote_handler=dbgp
+xdebug.remote_host=localhost
+xdebug.remote_port=9000
+xdebug.collect_params = 4
+" | sudo tee -a /etc/php5/conf.d/xdebug.ini
+
+
+echo 'Installing curl ...'
+sudo apt-get install curl
+
+
+echo 'Installing composer ...'
+cd ~/tmp
+curl -s https://getcomposer.org/installer | php
+sudo mv composer.phar /usr/local/bin/composer
+
