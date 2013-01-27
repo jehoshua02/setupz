@@ -6,7 +6,7 @@ color_default="\[\033[0m\]"
 PS1="${color_yellow_bold}$ ${color_default}"
 
 # show pwd in title
-function title() { echo -ne "\033]0;$1\007"; }
+function title() { echo -ne "\033]0;${1}\007"; }
 function cd() { builtin cd $1; title `pwd`; }
 cd `pwd`
 
