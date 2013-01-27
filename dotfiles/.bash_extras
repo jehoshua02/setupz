@@ -1,12 +1,12 @@
 #!/bin/bash
 
 # simple prompt
-color_yellow_bold="\[\033[1;33m\]"
-color_default="\[\033[0m\]"
-PS1="${color_yellow_bold}$ ${color_default}"
+color_yellow_bold='\[\033[1;33m\]'
+color_default='\[\033[0m\]'
+PS1=$color_yellow_bold'\$ '$color_default
 
 # show pwd in title
-function title() { echo -ne "\033]0;${1}\007"; }
+function title() { echo -en "\033]0;$1\007"; }
 function cd() { builtin cd $1; title `pwd`; }
 cd `pwd`
 
@@ -16,7 +16,4 @@ alias composerdump='composer dumpautoload --optimize'
 # debug php scripts
 alias xdebug='export XDEBUG_CONFIG=""'
 alias noxdebug='unset XDEBUG_CONFIG'
-
-# phpunit - assumes composer installed, project root, tests directory
-alias test='vendor/bin/phpunit --colors --bootstrap tests/bootstrap.php tests'
 
