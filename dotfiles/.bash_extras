@@ -1,14 +1,12 @@
 #!/bin/bash
 
 # simple prompt
-color_yellow_bold='\[\033[1;33m\]'
-color_default='\[\033[0m\]'
-PS1=$color_yellow_bold'\$ '$color_default
-
-# show pwd in title
-function title() { echo -en "\033]0;$1\007"; }
-function cd() { builtin cd $1; title `pwd`; }
-cd `pwd`
+COLOR_YELLOW_BOLD="\[\033[1;33m\]"
+COLOR_DEFAULT="\[\033[0m\]"
+TITLE="\[\e]0;\u@\h:\w\a\]"
+PROMPT="\w\n$ "
+WTF="${debian_chroot:+($debian_chroot)}"
+PS1="${COLOR_YELLOW_BOLD}${TITLE}${WTF}${PROMPT}${COLOR_DEFAULT}"
 
 # composer
 alias composerdump='composer dumpautoload --optimize'
