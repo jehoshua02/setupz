@@ -115,4 +115,4 @@ echo 'Installing MySQL Workbench ...'
 sudo apt-get install mysql-workbench
 
 echo 'Installing VirtualBox ...'
-sudo apt-get install virtualbox
+sudo apt-get install linux-headers-`uname -r` virtualbox virtualbox-ose-dkms
