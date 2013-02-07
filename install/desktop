@@ -77,9 +77,9 @@ sudo apt-get install eclipse
 
 echo 'Manually install firefox addons:
     + firebug
+    + firesass
     + RESTClient
     + easyXDebug
-    + flash :P
     + etc.
 Manually configure firefox preferences:
     + home page
@@ -107,10 +107,7 @@ sudo apt-get install compizconfig-settings-manager
 echo 'Manually configure compiz settings manager:
     + workspaces
     + window resizing
-    + resize info
     + launcher icon size
-    + wobbly windows
-    + negative display
     + etc'
 ccsm
 
