@@ -110,9 +110,3 @@ echo 'Manually configure compiz settings manager:
     + launcher icon size
     + etc'
 ccsm
-
-echo 'Installing MySQL Workbench ...'
-sudo apt-get install mysql-workbench
-
-echo 'Installing VirtualBox ...'
-sudo apt-get install linux-headers-`uname -r` virtualbox virtualbox-ose-dkms
