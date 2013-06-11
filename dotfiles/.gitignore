@@ -3,6 +3,5 @@
 .project
 .settings
 vendor
-scripts
-!application/view/*/scripts
 nbproject
+*.sublime-*
